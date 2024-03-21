@@ -9,7 +9,8 @@ class PageController extends Controller
 {
     public function index()
     {
-        dd(Train::all());
+        $trains = Train::whereDate('orario_di_partenza', today()->toDateString())->get();
+        dd($trains);
         return view('home');
     }
 }
