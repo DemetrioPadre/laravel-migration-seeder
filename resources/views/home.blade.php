@@ -32,14 +32,17 @@
                             <td>{{ $train->stazione_di_arrivo }}</td>
                             <td>{{ $train->codice_treno }}</td>
                             <td>{{ $train->numero_carrozze }}</td>
-                            <td>{{ $train->in_orario }}</td>
-                            <td>{{ $train->cancellato }}</td>
+                            <td>{{ $train->in_orario ? 'Si' : 'No' }}</td>
+                            <td>{{ $train->cancellato ? 'Si' : 'No' }}</td>
                             <td>{{ $train->created_at }}</td>
                             <td>{{ $train->updated_at }}</td>
                             <td>{{ $train->orario_di_partenza }}</td>
                             <td>{{ $train->orario_di_arrivo }}</td>
                         </tr>
                     @empty
+                        <tr>
+                            <td colspan="100%">nessun risultato trovato</td>
+                        </tr>
                     @endforelse
                 </tbody>
             </table>
